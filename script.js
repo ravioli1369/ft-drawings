@@ -1,8 +1,3 @@
-// Fourier Series
-// Daniel Shiffman
-// https://thecodingtrain.com/CodingChallenges/125-fourier-series.html
-// https://youtu.be/Mm2eYfj0SgA
-
 let time = 0;
 let wave = [];
 let path = [];
@@ -11,7 +6,7 @@ let slider;
 
 function setup() {
   createCanvas(600, 400);
-  slider = createSlider(1, 50, 5);
+  slider = createSlider(1, 10, 1);
 }
 
 function draw() {
@@ -20,39 +15,19 @@ function draw() {
 
   let x = 0;
   let y = 0;
-
   for (let i = 0; i < slider.value(); i++) {
     let prevx = x;
     let prevy = y;
-
-    let n = i * 2 + 1;
-    let radius = 75 * (4 / (n * PI));
-    x += radius * cos(n * time);
-    y += radius * sin(n * time);
-
-    stroke(255, 100);
+    let radius = 80 / (i + 1);
     noFill();
-    ellipse(prevx, prevy, radius * 2);
-
-    //fill(255);
+    stroke(255);
+    ellipse(x, y, radius * 2); // draw the circle
+    // draw the point
+    x += radius * cos((i + 1) * time);
+    y += radius * sin((i + 1) * time);
+    fill(255);
     stroke(255);
     line(prevx, prevy, x, y);
-    //ellipse(x, y, 8);
   }
-  wave.unshift(y);
-
-  translate(200, 0);
-  line(x - 200, y, 0, wave[0]);
-  beginShape();
-  noFill();
-  for (let i = 0; i < wave.length; i++) {
-    vertex(i, wave[i]);
-  }
-  endShape();
-
   time += 0.05;
-
-  if (wave.length > 250) {
-    wave.pop();
-  }
 }
