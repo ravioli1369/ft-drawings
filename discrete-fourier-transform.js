@@ -11,7 +11,7 @@
 
 function discreteFourierTransform(input) {
     const N = input.length;
-    const output = [];
+    const X = [];
 
     for (let k = 0; k < N; k++) {
         let sum = new ComplexNumber(0, 0);
@@ -23,11 +23,11 @@ function discreteFourierTransform(input) {
             const product = wn.multiply(xn);
             sum = sum.add(product);
         }
-
-        output.push(sum);
+        sum = sum.divide(new ComplexNumber(N, 0));
+        X[k] = sum;
     }
 
-    return output;
+    return X;
 }
 
 // Usage example
