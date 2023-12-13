@@ -7,7 +7,7 @@
  * @see https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/math/fourier-transform
  */
 
-import ComplexNumber from "./complex-number.js";
+// import ComplexNumber from "./complex-number.js";
 
 function discreteFourierTransform(input) {
     const N = input.length;

@@ -14,7 +14,7 @@
  * @see https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/math/complex-number
  */
 
-export default class ComplexNumber {
+class ComplexNumber {
     constructor(real, imaginary) {
         this.real = real;
         this.imaginary = imaginary;
