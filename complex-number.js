@@ -61,9 +61,9 @@ class ComplexNumber {
 }
 
 // Usage example:
-const complex1 = new ComplexNumber(2, 3);
-const complex2 = new ComplexNumber(4, -1);
+// const complex1 = new ComplexNumber(2, 3);
+// const complex2 = new ComplexNumber(4, -1);
 
-console.log(complex1.add(complex2).toString()); // Output: 6 + 2i
-console.log(complex1.subtract(complex2).toString()); // Output: -2 + 4i
-console.log(complex1.multiply(complex2).toString()); // Output: 11 + 10i
+// console.log(complex1.add(complex2).toString()); // Output: 6 + 2i
+// console.log(complex1.subtract(complex2).toString()); // Output: -2 + 4i
+// console.log(complex1.multiply(complex2).toString()); // Output: 11 + 10i
