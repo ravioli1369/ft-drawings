@@ -8,18 +8,18 @@ function setup() {
         "horizontal"
     );
     slider = createSlider(1, 10, 1);
-    slider.position(0.1 * screen.width, -0.05 * canvas.height, "relative");
+    slider.position(0.1 * screen.width, -0.07 * canvas.height, "relative");
+    html_slider = document.getElementById("slider-value");
+    html_slider.style.position = "relative";
+    html_slider.style.left = -0.35 * canvas.width + "px";
+    html_slider.style.top = -0.02 * canvas.height + "px";
 }
 
 function draw() {
-    html_slider = document.getElementById("slider-value");
     html_slider.innerHTML = "n = " + slider.value();
-    html_slider.style.position = "relative";
-    html_slider.style.left = -0.35 * canvas.width + "px";
-
-    background(50);
-    const x_translate = canvas.position().x + canvas.width / 5;
-    const y_translate = canvas.position().y + canvas.height / 2.4;
+    background(28, 28, 29);
+    const x_translate = canvas.width / 3;
+    const y_translate = canvas.height / 2;
 
     translate(x_translate, y_translate);
 
