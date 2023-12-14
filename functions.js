@@ -26,7 +26,7 @@ function linspace(startValue, stopValue, cardinality) {
     return arr;
 }
 
-function sumofsins(n) {
+function sumofsines(n) {
     // returns fourier transform of (1/1)*sin(1*t) + (1/2)*sin(2*t) + ... + (1/n)*sin(n*t)
     let t = 0;
     let scale = 100;

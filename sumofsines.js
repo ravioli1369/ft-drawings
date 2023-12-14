@@ -26,7 +26,7 @@ function draw() {
     let x = 0;
     let y = 0;
 
-    let fourier = sumofsins(slider.value());
+    let fourier = sumofsines(slider.value());
     let v = epiCycles(x, y, HALF_PI, fourier, time);
     path.unshift(v);
 
