@@ -37,9 +37,11 @@ function sumofsines(n) {
     }
     let inp = [];
     for (let i = 0; i < t.length; i++) {
-        inp[i] = 0;
+        inp[i] = new ComplexNumber(0, 0);
         for (let j = 1; j <= n; j++) {
-            inp[i] += (scale / j) * sin(j * t[i]);
+            inp[i] = inp[i].add(
+                new ComplexNumber((scale / j) * sin(j * t[i]), 0)
+            );
         }
     }
     return discreteFourierTransform(inp);
