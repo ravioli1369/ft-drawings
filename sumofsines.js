@@ -1,6 +1,5 @@
 let time = 0;
 let path = { x: [], y: [] };
-
 let slider;
 
 function setup() {
@@ -66,7 +65,7 @@ function draw() {
 
     slider.changed(() => {
         time = 0;
-        path = [];
+        path = { x: [], y: [] };
     });
 
     if (path.x.length > 500) {
