@@ -15,6 +15,27 @@ function setup() {
     html_slider.style.top = -0.02 * canvas.height + "px";
 }
 
+function sumofsines(n) {
+    // returns fourier transform of (1/1)*sin(1*t) + (1/2)*sin(2*t) + ... + (1/n)*sin(n*t)
+    let t = 0;
+    let scale = 100;
+    if (n < 5) {
+        t = linspace(0, 2 * Math.PI, 100);
+    } else {
+        t = linspace(0, 2 * Math.PI, 25 * n);
+    }
+    let inp = [];
+    for (let i = 0; i < t.length; i++) {
+        inp[i] = new ComplexNumber(0, 0);
+        for (let j = 1; j <= n; j++) {
+            inp[i] = inp[i].add(
+                new ComplexNumber((scale / j) * sin(j * t[i]), 0)
+            );
+        }
+    }
+    return discreteFourierTransform(inp);
+}
+
 function draw() {
     html_slider.innerHTML = "n = " + slider.value();
     background(28, 28, 29);
