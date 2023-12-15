@@ -11,8 +11,8 @@ function setup() {
     );
 
     for (let i = 0; i < batman.length; i += 10) {
-        x_vals.push(batman[i].x);
-        y_vals.push(batman[i].y);
+        x_vals.push(new ComplexNumber(batman[i].x, 0));
+        y_vals.push(new ComplexNumber(batman[i].y, 0));
     }
     fourierX = discreteFourierTransform(x_vals);
     fourierY = discreteFourierTransform(y_vals);
