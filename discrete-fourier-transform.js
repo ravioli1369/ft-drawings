@@ -7,10 +7,8 @@
  * @see https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/math/fourier-transform
  */
 
-// import ComplexNumber from "./complex-number.js";
-
-function discreteFourierTransform(input) {
-    const N = input.length;
+function discreteFourierTransform(x) {
+    const N = x.length;
     let X = [];
 
     for (let k = 0; k < N; k++) {
@@ -19,8 +17,7 @@ function discreteFourierTransform(input) {
         for (let n = 0; n < N; n++) {
             const phi = (2 * Math.PI * k * n) / N;
             const wn = new ComplexNumber(Math.cos(phi), -Math.sin(phi));
-            const xn = new ComplexNumber(input[n], 0);
-            const product = wn.multiply(xn);
+            const product = wn.multiply(x[n]);
             sum = sum.add(product);
         }
         sum = sum.divide(new ComplexNumber(N, 0));
