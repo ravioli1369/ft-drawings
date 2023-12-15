@@ -25,10 +25,10 @@ function draw() {
 
     translate(x_translate, y_translate);
 
-    let Vx = epiCycles(canvas.width / 4, -canvas.height / 5, 0, fourierX, time);
+    let Vx = epiCycles(canvas.width / 10, canvas.height / 5, 0, fourierX, time);
     let Vy = epiCycles(
-        -canvas.height / 4,
-        canvas.height / 5,
+        canvas.width / 2,
+        -canvas.height / 5,
         HALF_PI,
         fourierY,
         time
@@ -42,15 +42,14 @@ function draw() {
     noFill();
     for (let i = 0; i < path.x.length; i++) {
         vertex(path.x[i], path.y[i]);
-        console.log(path.x[i], path.y[i]);
     }
     endShape();
 
     const dt = TWO_PI / fourierX.length;
     time += dt;
 
-    if (time > TWO_PI) {
-        time = 0;
-        path = { x: [], y: [] };
+    if (path.x.length > 500) {
+        path.x.pop();
+        path.y.pop();
     }
 }
