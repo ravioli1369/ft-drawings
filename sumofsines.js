@@ -1,5 +1,5 @@
 let time = 0;
-let path = [];
+let path = { x: [], y: [] };
 
 let slider;
 
@@ -48,16 +48,17 @@ function draw() {
     let y = 0;
 
     let fourier = sumofsines(slider.value());
-    let v = epiCycles(x, y, HALF_PI, fourier, time);
-    path.unshift(v);
+    let V = epiCycles(x, y, HALF_PI, fourier, time);
+    path.x.unshift(V.x);
+    path.y.unshift(V.y);
 
     translate(canvas.width / 4, 0);
     beginShape();
     noFill();
-    for (let i = 0; i < path.length; i++) {
-        vertex(i, path[i].y);
+    for (let i = 0; i < path.y.length; i++) {
+        vertex(i, path.y[i]);
     }
-    line(v.x - canvas.width / 4, v.y, 0, v.y);
+    line(V.x - canvas.width / 4, V.y, 0, V.y);
     endShape();
 
     const dt = TWO_PI / fourier.length;
@@ -68,8 +69,8 @@ function draw() {
         path = [];
     });
 
-    if (time > 10 * TWO_PI) {
-        time = 0;
-        path = [];
+    if (path.x.length > 500) {
+        path.x.pop();
+        path.y.pop();
     }
 }
