@@ -10,9 +10,9 @@ function setup() {
         "horizontal"
     );
 
-    for (let i = 0; i < drawing.length; i += 10) {
-        x_vals.push(drawing[i].x);
-        y_vals.push(drawing[i].y);
+    for (let i = 0; i < batman.length; i += 10) {
+        x_vals.push(batman[i].x);
+        y_vals.push(batman[i].y);
     }
     fourierX = discreteFourierTransform(x_vals);
     fourierY = discreteFourierTransform(y_vals);
@@ -27,7 +27,7 @@ function draw() {
 
     let Vx = epiCycles(canvas.width / 4, -canvas.height / 5, 0, fourierX, time);
     let Vy = epiCycles(
-        canvas.height / 4,
+        -canvas.height / 4,
         canvas.height / 5,
         HALF_PI,
         fourierY,
