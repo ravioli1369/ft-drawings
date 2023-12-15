@@ -14,7 +14,7 @@ function setup() {
     html_slider.style.top = -0.02 * canvas.height + "px";
 }
 
-function sumofsines(n) {
+function sawtooth(n) {
     // returns fourier transform of (1/1)*sin(1*t) + (1/2)*sin(2*t) + ... + (1/n)*sin(n*t)
     let t = 0;
     let scale = 100;
@@ -46,7 +46,7 @@ function draw() {
     let x = 0;
     let y = 0;
 
-    let fourier = sumofsines(slider.value());
+    let fourier = sawtooth(slider.value());
     let V = epiCycles(x, y, HALF_PI, fourier, time);
     path.x.unshift(V.x);
     path.y.unshift(V.y);
