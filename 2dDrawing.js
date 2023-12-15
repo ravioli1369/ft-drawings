@@ -49,8 +49,8 @@ function draw() {
     const dt = TWO_PI / fourierX.length;
     time += dt;
 
-    if (time > 10 * TWO_PI) {
+    if (time > TWO_PI) {
         time = 0;
-        path = [];
+        path = { x: [], y: [] };
     }
 }
