@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- <script src="p5/p5.min.js"></script> -->
-        <script src="p5/p5.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <meta charset="utf-8" />
     </head>
     <body>
-        <div class="container">
-            <p id="slider-value"></p>
-            <script src="./discrete-fourier-transform.js"></script>
+        <div class="container" id="title">
+            <h1>Fourier Transform</h1>
+        </div>
+        <div class="container"></div>
+        <br />
+        <div
+            class="container"
+            id="sawtooth"
+            style="position: relative; left: -6vw"
+        >
+            <p id="slider-value" style="display: inline-block"></p>
+            <p id="slider" style="display: inline-block"></p>
+            <script src="./p5/p5.js"></script>
             <script src="./complex-number.js"></script>
+            <script src="./discrete-fourier-transform.js"></script>
             <script src="./functions.js"></script>
             <script src="./batman.js"></script>
-            <!-- <script src="./sawtooth.js"></script> -->
-            <!-- <script src="./2dDrawing-batman.js"></script> -->
-            <script src="./2dDrawing-userinput.js"></script>
+            <script src="./ft-drawing.js"></script>
         </div>
+        <br />
+        <div class="container" id="batman"></div>
+        <br />
+        <div class="container" id="user" style="touch-action: none"></div>
     </body>
 </html>
